@@ -1,0 +1,45 @@
+{% extends "./base.html" %} {% block page_content %}
+<div class="alert alert-success">
+  <h1 class="text-center">This is Home</h1>
+</div>
+<div class="container">
+  <div class="row py-3">
+    <div class="col-3 order-2" id="sticky-sidebar">
+      <div class="sticky-top">
+        <table class="table table-striped">
+          <thead>
+            <tr class="text-center">
+              <th scope="col" colspan="3">Categories</th>
+            </tr>
+          </thead>
+          <!-- <tbody>
+            {% for caty in categories %}
+            <tr class="text-center">
+              <td class="align-middle">{{ caty }}</td>
+              {% if user in caty.user.all %}
+              <td>
+                <a class="btn btn-danger" href="/unsubscribe/{{caty.id}}">-</a>
+              </td>
+              {% else %}
+              <td>
+                <a class="btn btn-success" href="/subscribe/{{caty.id}}">+</a>
+              </td>
+              {% endif %}
+            </tr>
+            {% endfor %}
+          </tbody> -->
+        </table>
+      </div>
+    </div>
+    <div class="col" id="main">
+      <!-- <h1>{{caty.user.all}}</h1> -->
+      {% for p in post %}
+      <h1 class="text-center">
+        <p class="align-middle">{{ p.title }}</p>
+        <p>{{p.content}}</p>
+      </h1>
+      {% endfor %} ...
+    </div>
+  </div>
+</div>
+{% endblock %}
